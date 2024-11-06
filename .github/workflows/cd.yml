@@ -47,7 +47,7 @@ jobs:
 
       - name: Deploy ECS Cluster
         id: deploy-ecs-stack
-        uses: aws-actions/aws-cloudformation-github-deploy@master
+        uses: aws-actions/aws-cloudformation-github-deploy@main
         with:
           name: cluster
           template: ./templates/cluster.yaml
