@@ -39,19 +39,12 @@ jobs:
       - name: Echo
         run: echo "image-tag is ${{ inputs.image-tag }}"
 
-      # TODO
-      # Configure AWS credentials
-      # Deploy ECS Cluster using templates/cluster.yaml
-      # Update ECS Task Definition with image tag
-      # Deploy new ECS Task
-      # Output the app URL
-      # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           aws-region: ${{ vars.AWS_REGION }}
-      # Deploy ECS Cluster using templates/cluster.yaml
+
       - name: Deploy ECS Cluster
         id: deploy-ecs-stack
         uses: aws-actions/aws-cloudformation-github-deploy@master
